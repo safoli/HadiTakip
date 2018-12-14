@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HadiTakip", "HadiTakip\HadiTakip.csproj", "{B4663849-C46D-4703-8522-8709CCC7BE04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4663849-C46D-4703-8522-8709CCC7BE04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4663849-C46D-4703-8522-8709CCC7BE04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4663849-C46D-4703-8522-8709CCC7BE04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4663849-C46D-4703-8522-8709CCC7BE04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD6A1F8C-6941-4D4D-BEEF-D96DBCE0FA6C}
+	EndGlobalSection
+EndGlobal
