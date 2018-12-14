@@ -90,16 +90,16 @@ namespace HadiTakip
 
                 SetCaption();
 
-                if(!string.IsNullOrEmpty( this.FirstImageLink) && this.FirstImageLink != firstLink)
+                if (!string.IsNullOrEmpty(this.FirstImageLink) && this.FirstImageLink != firstLink)
                 {
                     this.notifyIcon1.BalloonTipText = "New!";
                     this.notifyIcon1.BalloonTipTitle = "New'";
                     this.notifyIcon1.Icon = this.Icon;
                     this.notifyIcon1.Visible = true;
-                    this.notifyIcon1.ShowBalloonTip(5*1000);
-
-                    this.FirstImageLink = firstLink;
+                    this.notifyIcon1.ShowBalloonTip(5 * 1000);
                 }
+
+                this.FirstImageLink = firstLink;
             }
             catch (Exception)
             {
