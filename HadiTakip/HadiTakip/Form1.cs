@@ -18,6 +18,7 @@ namespace HadiTakip
         private const string Tracker = "hadibilgiyarismasii";
         DataTable Source;
         Timer tmr;
+        string FirstImageLink;
 
         public Form1()
         {
@@ -51,6 +52,7 @@ namespace HadiTakip
                 Source.Columns.Add("link", typeof(byte[]));
 
                 string content;
+                string firstLink = "";
 
                 using (var client = new WebClient())
                 {
@@ -62,6 +64,10 @@ namespace HadiTakip
                     foreach (Match storyLinkRaw in storyLinksRaw)
                     {
                         var storyLink = storyLinkRaw.Value.Replace(@"""display_url"":""", "").Replace(@"""", "");
+
+                        if (string.IsNullOrEmpty(firstLink))
+                            firstLink = storyLink;
+
                         var bin = client.DownloadData(storyLink);
                         Source.Rows.Add(bin);
                     }
@@ -83,6 +89,17 @@ namespace HadiTakip
                 this.dataGridView1.AutoResizeColumns();
 
                 SetCaption();
+
+                if(!string.IsNullOrEmpty( this.FirstImageLink) && this.FirstImageLink != firstLink)
+                {
+                    this.notifyIcon1.BalloonTipText = "New!";
+                    this.notifyIcon1.BalloonTipTitle = "New'";
+                    this.notifyIcon1.Icon = this.Icon;
+                    this.notifyIcon1.Visible = true;
+                    this.notifyIcon1.ShowBalloonTip(5*1000);
+
+                    this.FirstImageLink = firstLink;
+                }
             }
             catch (Exception)
             {
