@@ -92,6 +92,7 @@ namespace HadiTakip
 
                 if (!string.IsNullOrEmpty(this.FirstImageLink) && this.FirstImageLink != firstLink)
                 {
+                    this.notifyIcon1.Text = "Hadi";
                     this.notifyIcon1.BalloonTipText = "New!";
                     this.notifyIcon1.BalloonTipTitle = "New'";
                     this.notifyIcon1.Icon = this.Icon;
