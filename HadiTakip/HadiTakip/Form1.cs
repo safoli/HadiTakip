@@ -61,6 +61,7 @@ namespace HadiTakip
                     content = client.DownloadString($"http://www.instagram.com/{user}/");
 
                     var storyLinksRaw = Regex.Matches(content, @"""display_url"":""([0-9A-Za-z:\/\-\._\?\=])*""");
+                    var limit = 3;
 
                     foreach (Match storyLinkRaw in storyLinksRaw)
                     {
@@ -71,6 +72,9 @@ namespace HadiTakip
 
                         var bin = client.DownloadData(storyLink);
                         Source.Rows.Add(bin);
+
+                        if (Source.Rows.Count >= limit)
+                            break;
                     }
                 }
 
@@ -87,6 +91,7 @@ namespace HadiTakip
 
                 this.dataGridView1.Columns["link"].Visible = false;
                 this.dataGridView1.RowHeadersVisible = false;
+                this.dataGridView1.AllowUserToAddRows = false;
                 this.dataGridView1.AutoResizeRows();
                 this.dataGridView1.AutoResizeColumns();
 
