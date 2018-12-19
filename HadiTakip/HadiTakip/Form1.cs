@@ -27,7 +27,8 @@ namespace HadiTakip
 
         private void SetCaption()
         {
-            this.Text = $"{Tracker}, {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}";
+            //this.Text = $"{Tracker}, {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}";
+            txtInfo.Text = $"{Tracker}{Environment.NewLine}{DateTime.Now.ToString("dd/MM/yyyy")}{Environment.NewLine}{DateTime.Now.ToString("HH:mm:ss")}";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -85,6 +86,7 @@ namespace HadiTakip
                 }
 
                 this.dataGridView1.Columns["link"].Visible = false;
+                this.dataGridView1.RowHeadersVisible = false;
                 this.dataGridView1.AutoResizeRows();
                 this.dataGridView1.AutoResizeColumns();
 
